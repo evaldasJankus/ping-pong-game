@@ -13,7 +13,7 @@ new_window.tracer(0)
 score_a = 0
 score_b = 0
 end_match_number = 10
-audio_file_path = "../pat.wav"
+audio_file_path = "pat.wav"
 
 # OBJECTS: Paddle A (mustukas)
 paddle_a = turtle.Turtle()
