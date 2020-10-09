@@ -13,6 +13,7 @@ new_window.tracer(0)
 score_a = 0
 score_b = 0
 end_match_number = 10
+audio_file_path = "../pat.wav"
 
 # OBJECTS: Paddle A (mustukas)
 paddle_a = turtle.Turtle()
@@ -94,13 +95,12 @@ def border_check_balls(obj_b, p_a, p_b):
     if obj_b.ycor() > 290:
         obj_b.sety(290)
         obj_b.dy *=-1
-        winsound.PlaySound("pat.wav",winsound.SND_ASYNC)
+        winsound.PlaySound(audio_file_path,winsound.SND_ASYNC)
 
     if obj_b.ycor() < -290:
         obj_b.sety(-290)
         obj_b.dy *=-1
-        winsound.PlaySound("pat.wav",winsound.SND_ASYNC)
-        # os.system("aplay pat.wav")
+        winsound.PlaySound(audio_file_path,winsound.SND_ASYNC)
 
     # Checking horizontaly lines, going off the grid or passing the panel
     if obj_b.xcor() > 390:
@@ -121,13 +121,13 @@ def border_check_balls(obj_b, p_a, p_b):
     if (obj_b.xcor() > 360 and obj_b.xcor() < 370) and (obj_b.ycor() < p_b.ycor()+60 and obj_b.ycor() > p_b.ycor() -60):
         obj_b.setx(360)
         obj_b.dx *= -1
-        winsound.PlaySound("pat.wav",winsound.SND_ASYNC)
+        winsound.PlaySound(audio_file_path,winsound.SND_ASYNC)
 
     # paddle and ball colision (Left side <-)
     if (obj_b.xcor() < -360 and obj_b.xcor() > -370) and (obj_b.ycor() < p_a.ycor()+60 and obj_b.ycor() > p_a.ycor() -60):
         obj_b.setx(-360)
         obj_b.dx *= -1
-        winsound.PlaySound("pat.wav",winsound.SND_ASYNC)
+        winsound.PlaySound(audio_file_path,winsound.SND_ASYNC)
 
 ### MAIN GAME LOOP ###
 while True:
